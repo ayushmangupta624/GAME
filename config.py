@@ -1,7 +1,10 @@
 import google.generativeai as genai
 from sentence_transformers import SentenceTransformer
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-API_KEY = ""
+API_KEY = os.environ.get("API_KEY")
 genai.configure(api_key=API_KEY)
 
 SAFETY_SETTINGS = [
